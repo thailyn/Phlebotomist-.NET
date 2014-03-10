@@ -1,0 +1,3 @@
+[submodule "Model"]
+	path = Model
+	url = ssh://gitlab@gitlab.atheneum-caelestis.com:58757/thailyn/phlebotomist-model-net.git
