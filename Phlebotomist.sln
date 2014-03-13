@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phlebotomist", "Phlebotomis
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{FC47F3D3-D5CA-4A51-9361-7EEA38095F4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phlebotomist.Model", "..\..\phlebotomist-model-.net\Phlebotomist.Model\Phlebotomist.Model.csproj", "{7B60AB7B-C5CA-4564-A828-34B4907AB4ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phlebotomist.Model", "Model\Phlebotomist.Model.csproj", "{7B60AB7B-C5CA-4564-A828-34B4907AB4ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
