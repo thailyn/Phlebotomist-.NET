@@ -33,30 +33,30 @@
         </Grid.ColumnDefinitions>
         
         <TextBlock Grid.Row="0" Grid.Column="0">Name:</TextBlock>
-        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Name}"></TextBox>
         <TextBlock Grid.Row="1" Grid.Column="0">Blood Brothers ID:</TextBlock>
-        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.BbId}"></TextBox>
         <TextBlock Grid.Row="2" Grid.Column="0">Rarity:</TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Rarity.Name}"></TextBox>
         <TextBlock Grid.Row="3" Grid.Column="0">Stars:</TextBlock>
-        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.NumStars}"></TextBox>
 
         <TextBlock Grid.Row="4" Grid.Column="0">Max Stars:</TextBlock>
-        <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.MaxStars}"></TextBox>
         <TextBlock Grid.Row="5" Grid.Column="0">Growth:</TextBlock>
-        <TextBox Grid.Row="5" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Growth.Name}"></TextBox>
         <TextBlock Grid.Row="6" Grid.Column="0">Worth:</TextBlock>
-        <TextBox Grid.Row="6" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Worth}"></TextBox>
         <TextBlock Grid.Row="7" Grid.Column="0">Race:</TextBlock>
-        <TextBox Grid.Row="7" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Race.Name}"></TextBox>
 
         <TextBlock Grid.Row="8" Grid.Column="0">Tradable:</TextBlock>
-        <TextBox Grid.Row="8" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Tradable}"></TextBox>
         <TextBlock Grid.Row="9" Grid.Column="0">Last Words:</TextBlock>
-        <TextBox Grid.Row="9" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.LastWords}"></TextBox>
         <TextBlock Grid.Row="10" Grid.Column="0">Previous Evolution:</TextBlock>
-        <TextBox Grid.Row="10" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.PreviousEvolution.Name}"></TextBox>
         <TextBlock Grid.Row="11" Grid.Column="0">Next Evolution:</TextBlock>
-        <TextBox Grid.Row="11" Grid.Column="1"></TextBox>
+        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.NextEvolution.Name}"></TextBox>
     </Grid>
 </UserControl>
