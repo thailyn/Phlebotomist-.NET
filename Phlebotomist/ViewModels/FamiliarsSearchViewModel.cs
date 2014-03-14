@@ -41,7 +41,8 @@ namespace Phlebotomist.ViewModels
 
         public FamiliarsSearchViewModel()
         {
-            /*
+            Familiars = new ObservableCollection<FamiliarType>();
+
             Familiars.Add(new FamiliarType
                 {
                     Name = "Thor"
@@ -50,7 +51,6 @@ namespace Phlebotomist.ViewModels
                 {
                     Name = "Odin"
                 });
-             * */
         }
     }
 }
