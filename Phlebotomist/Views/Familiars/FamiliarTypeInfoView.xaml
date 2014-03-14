@@ -10,7 +10,53 @@
         <pc:FamiliarTypeToStringConverter x:Key="familiarTypeToStringConverter" />
     </UserControl.Resources>
     <Grid>
+        <!--
         <TextBlock Text="{Binding Path=SelectedFamiliarType,
-            Converter={StaticResource familiarTypeToStringConverter}}" />
+            Converter={StaticResource familiarTypeToStringConverter}}" /> -->
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0">Name:</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="0">Blood Brothers ID:</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="2" Grid.Column="0">Rarity:</TextBlock>
+        <TextBox Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="3" Grid.Column="0">Stars:</TextBlock>
+        <TextBox Grid.Row="3" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="0">Max Stars:</TextBlock>
+        <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="5" Grid.Column="0">Growth:</TextBlock>
+        <TextBox Grid.Row="5" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="6" Grid.Column="0">Worth:</TextBlock>
+        <TextBox Grid.Row="6" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="7" Grid.Column="0">Race:</TextBlock>
+        <TextBox Grid.Row="7" Grid.Column="1"></TextBox>
+
+        <TextBlock Grid.Row="8" Grid.Column="0">Tradable:</TextBlock>
+        <TextBox Grid.Row="8" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="9" Grid.Column="0">Last Words:</TextBlock>
+        <TextBox Grid.Row="9" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="10" Grid.Column="0">Previous Evolution:</TextBlock>
+        <TextBox Grid.Row="10" Grid.Column="1"></TextBox>
+        <TextBlock Grid.Row="11" Grid.Column="0">Next Evolution:</TextBlock>
+        <TextBox Grid.Row="11" Grid.Column="1"></TextBox>
     </Grid>
 </UserControl>
