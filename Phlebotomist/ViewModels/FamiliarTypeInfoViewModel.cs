@@ -1,6 +1,7 @@
 ﻿using Phlebotomist.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -27,14 +28,40 @@ namespace Phlebotomist.ViewModels
             }
         }
 
+        private ObservableCollection<Rarity> _rarities;
+        public ObservableCollection<Rarity> Rarities
+        {
+            get
+            {
+                return _rarities;
+            }
+            set
+            {
+                if (_rarities != value)
+                {
+                    _rarities = value;
+                    OnPropertyChanged("Rarities");
+                }
+            }
+        }
+
         public FamiliarTypeInfoViewModel()
         {
-
+            var context = new Phlebotomist.Model.PhlebotomistModelContainer();
+            Rarities = new ObservableCollection<Rarity>(
+                from r in context.Rarities1
+                select r);
         }
 
         public void NewFamiliarTypeSelection(FamiliarType selectedFamiliarType)
         {
             SelectedFamiliarType = selectedFamiliarType;
+        }
+
+        public bool SaveSelectedFamiliarType()
+        {
+            var familiar = SelectedFamiliarType;
+            return false;
         }
 
         #region INotifyPropertyChanged

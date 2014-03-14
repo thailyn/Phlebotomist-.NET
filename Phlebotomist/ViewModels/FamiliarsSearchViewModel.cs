@@ -43,9 +43,16 @@ namespace Phlebotomist.ViewModels
         {
             Familiars = new ObservableCollection<FamiliarType>();
 
+            var context = new Phlebotomist.Model.PhlebotomistModelContainer();
+            var selectedRarity = (from r in context.Rarities1
+                                  select r).ToList().FirstOrDefault();
+
             Familiars.Add(new FamiliarType
                 {
-                    Name = "Thor"
+                    Name = "Thor",
+                    Worth = 7000,
+                    RarityId = selectedRarity.Id,
+                    Rarity = selectedRarity
                 });
             Familiars.Add(new FamiliarType
                 {

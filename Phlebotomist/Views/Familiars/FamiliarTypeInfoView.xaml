@@ -8,12 +8,14 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <pc:FamiliarTypeToStringConverter x:Key="familiarTypeToStringConverter" />
+        <pc:RarityToStringConverter x:Key="rarityToStringConverter" />
     </UserControl.Resources>
     <Grid>
         <!--
         <TextBlock Text="{Binding Path=SelectedFamiliarType,
             Converter={StaticResource familiarTypeToStringConverter}}" /> -->
         <Grid.RowDefinitions>
+            <RowDefinition />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -37,18 +39,33 @@
         <TextBlock Grid.Row="1" Grid.Column="0">Blood Brothers ID:</TextBlock>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.BbId}"></TextBox>
         <TextBlock Grid.Row="2" Grid.Column="0">Rarity:</TextBlock>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Rarity.Name}"></TextBox>
+        <ComboBox Name="selectedRarity" Grid.Row="2" Grid.Column="1"
+                  ItemsSource="{Binding Path=Rarities}"
+                  SelectedValue="{Binding SelectedFamiliarType.RarityId, Mode=TwoWay}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name">
+        </ComboBox>
         <TextBlock Grid.Row="3" Grid.Column="0">Stars:</TextBlock>
         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.NumStars}"></TextBox>
 
         <TextBlock Grid.Row="4" Grid.Column="0">Max Stars:</TextBlock>
         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.MaxStars}"></TextBox>
         <TextBlock Grid.Row="5" Grid.Column="0">Growth:</TextBlock>
-        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Growth.Name}"></TextBox>
+        <ComboBox Grid.Row="5" Grid.Column="1"
+                  ItemsSource="{Binding Path=Growths}"
+                  SelectedValue="{Binding SelectedFamiliarType.GrowthId, Mode=TwoWay}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name">
+        </ComboBox>
         <TextBlock Grid.Row="6" Grid.Column="0">Worth:</TextBlock>
         <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Worth}"></TextBox>
         <TextBlock Grid.Row="7" Grid.Column="0">Race:</TextBlock>
-        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Race.Name}"></TextBox>
+        <ComboBox Grid.Row="7" Grid.Column="1"
+                  ItemsSource="{Binding Path=Races}"
+                  SelectedValue="{Binding SelectedFamiliarType.RaceId, Mode=TwoWay}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name">
+        </ComboBox>
 
         <TextBlock Grid.Row="8" Grid.Column="0">Tradable:</TextBlock>
         <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.Tradable}"></TextBox>
@@ -58,5 +75,12 @@
         <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.PreviousEvolution.Name}"></TextBox>
         <TextBlock Grid.Row="11" Grid.Column="0">Next Evolution:</TextBlock>
         <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.NextEvolution.Name}"></TextBox>
+
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
+                    Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" >
+            <Button Name="newButton" Click="newButton_Click" IsEnabled="False">New</Button>
+            <Button Name="saveButton" Click="saveButton_Click">Save</Button>
+            <Button Name="deleteButton" Click="deleteButton_Click" IsEnabled="False">Delete</Button>
+        </StackPanel>
     </Grid>
 </UserControl>

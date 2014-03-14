@@ -52,6 +52,21 @@ namespace Phlebotomist.Views.Familiars
             throw new NotImplementedException();
         }
 
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SaveSelectedFamiliarType();
+        }
+
+        private void newButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
     }
 }
