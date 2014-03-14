@@ -14,10 +14,18 @@
     </UserControl.Resources>
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <ItemsControl ItemsSource="{Binding Source={StaticResource FamiliarsCollectionView},
-                Converter={StaticResource familiarTypeToStringConverter}}">
-
-            </ItemsControl>
+            <ListBox ItemsSource="{Binding Source={StaticResource FamiliarsCollectionView}}">
+                <!-- ,Converter={StaticResource familiarTypeToStringConverter} -->
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=Name}" />
+                            <!--<TextBlock Text="{Binding Path=Description}"/>
+                            <TextBlock Text="{Binding Path=Priority}"/>-->
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </ScrollViewer>
     </Grid>
 </UserControl>
