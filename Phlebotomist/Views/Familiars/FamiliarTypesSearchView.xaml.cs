@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Phlebotomist.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,28 @@ namespace Phlebotomist.Views.Familiars
     /// </summary>
     public partial class FamiliarTypesSearchView : UserControl
     {
+        private FamiliarsSearchViewModel _viewModel;
+        public FamiliarsSearchViewModel ViewModel
+        {
+            get
+            {
+                return _viewModel;
+            }
+            set
+            {
+                if (_viewModel != value)
+                {
+                    _viewModel = value;
+                    //OnPropertyChanged("ViewModel");
+                }
+            }
+        }
+
         public FamiliarTypesSearchView()
         {
             InitializeComponent();
-            this.DataContext = new Phlebotomist.ViewModels.FamiliarsSearchViewModel();
+            ViewModel = new FamiliarsSearchViewModel();
+            this.DataContext = ViewModel;
         }
     }
 }

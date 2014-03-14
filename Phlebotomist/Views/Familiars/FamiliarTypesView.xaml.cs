@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Phlebotomist.Model;
+using Phlebotomist.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,16 @@ namespace Phlebotomist.Views.Familiars
         public FamiliarTypesView()
         {
             InitializeComponent();
+        }
+
+        private void FamiliarTypesSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FamiliarTypesSearchView searchView = (FamiliarTypesSearchView)sender;
+            if (e.AddedItems.Count == 1)
+            {
+                var familiarTypeInfoViewModel = FamiliarTypeInfo.DataContext as FamiliarTypeInfoViewModel;
+                familiarTypeInfoViewModel.NewFamiliarTypeSelection(e.AddedItems[0] as FamiliarType);
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Phlebotomist.ViewModels
 {
-    class FamiliarsSearchViewModel : INotifyPropertyChanged
+    public class FamiliarsSearchViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<FamiliarType> _familiars;
         public ObservableCollection<FamiliarType> Familiars

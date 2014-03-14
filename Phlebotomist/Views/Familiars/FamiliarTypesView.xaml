@@ -11,8 +11,8 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
-        <pf:FamiliarTypesSearchView x:Name="FamiliarTypesSearch" Grid.Column="0" />
+
+        <pf:FamiliarTypesSearchView x:Name="FamiliarTypesSearch" Grid.Column="0" ListView.SelectionChanged="FamiliarTypesSearch_SelectionChanged" />
         <pf:FamiliarTypeInfoView x:Name="FamiliarTypeInfo" Grid.Column="1" />
     </Grid>
 </UserControl>

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Phlebotomist.Model;
+using Phlebotomist.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,35 @@ namespace Phlebotomist.Views.Familiars
     /// </summary>
     public partial class FamiliarTypeInfoView : UserControl
     {
+        private FamiliarTypeInfoViewModel _viewModel;
+        public FamiliarTypeInfoViewModel ViewModel
+        {
+            get
+            {
+                return _viewModel;
+            }
+            set
+            {
+                if (_viewModel != value)
+                {
+                    _viewModel = value;
+                    //OnPropertyChanged("ViewModel");
+                }
+            }
+        }
+
         public FamiliarTypeInfoView()
         {
             InitializeComponent();
+            this.ViewModel = new FamiliarTypeInfoViewModel();
+            this.DataContext = ViewModel;
         }
+
+        internal void FamiliarType (object familiarType)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

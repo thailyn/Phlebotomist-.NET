@@ -60,6 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="Converters\FamiliarTypeToStringConverter.cs" />
     <Compile Include="ViewModels\FamiliarsSearchViewModel.cs" />
+    <Compile Include="ViewModels\FamiliarTypeInfoViewModel.cs" />
     <Compile Include="Views\Familiars\FamiliarTypeInfoView.xaml.cs">
       <DependentUpon>FamiliarTypeInfoView.xaml</DependentUpon>
     </Compile>
