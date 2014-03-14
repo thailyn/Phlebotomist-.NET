@@ -1,8 +1,11 @@
 ﻿<Window x:Class="Phlebotomist.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pv="clr-namespace:Phlebotomist.Views.Familiars"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <pv:FamiliarTypesView>
+            
+        </pv:FamiliarTypesView>
     </Grid>
 </Window>

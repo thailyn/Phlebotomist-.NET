@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Phlebotomist.Views.Familiars
 {
     /// <summary>
-    /// Interaction logic for FamiliarInfoView.xaml
+    /// Interaction logic for FamiliarsView.xaml
     /// </summary>
-    public partial class FamiliarInfoView : UserControl
+    public partial class FamiliarTypesView : UserControl
     {
-        public FamiliarInfoView()
+        public FamiliarTypesView()
         {
             InitializeComponent();
         }
