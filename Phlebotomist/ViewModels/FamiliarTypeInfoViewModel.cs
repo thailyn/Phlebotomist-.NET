@@ -33,6 +33,12 @@ namespace Phlebotomist.ViewModels
         {
             get
             {
+                if (_rarities == null)
+                {
+                    _rarities = new ObservableCollection<Rarity>(
+                        from r in Context.Rarities1
+                        select r);
+                }
                 return _rarities;
             }
             set
@@ -41,6 +47,52 @@ namespace Phlebotomist.ViewModels
                 {
                     _rarities = value;
                     OnPropertyChanged("Rarities");
+                }
+            }
+        }
+
+        private ObservableCollection<Growth> _growths;
+        public ObservableCollection<Growth> Growths
+        {
+            get
+            {
+                if (_growths == null)
+                {
+                    _growths = new ObservableCollection<Growth>(
+                        from g in Context.Growths
+                        select g);
+                }
+                return _growths;
+            }
+            set
+            {
+                if (_growths != value)
+                {
+                    _growths = value;
+                    OnPropertyChanged("Growths");
+                }
+            }
+        }
+
+        private ObservableCollection<Race> _races;
+        public ObservableCollection<Race> Races
+        {
+            get
+            {
+                if (_races == null)
+                {
+                    _races = new ObservableCollection<Race>(
+                        from r in Context.Races
+                        select r);
+                }
+                return _races;
+            }
+            set
+            {
+                if (_races != value)
+                {
+                    _races = value;
+                    OnPropertyChanged("Races");
                 }
             }
         }
