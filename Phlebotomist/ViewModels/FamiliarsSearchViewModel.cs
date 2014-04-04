@@ -23,6 +23,12 @@ namespace Phlebotomist.ViewModels
         {
             get
             {
+                if (_familiars == null)
+                {
+                    _familiars = new ObservableCollection<FamiliarType>(
+                        from f in Context.FamiliarTypes
+                        select f);
+                }
                 return _familiars;
             }
             protected set
