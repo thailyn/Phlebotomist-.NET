@@ -113,10 +113,31 @@ namespace Phlebotomist.ViewModels
             SelectedFamiliarType = selectedFamiliarType;
         }
 
+        public void NewSelectedFamiliarType()
+        {
+            SelectedFamiliarType = new FamiliarType
+                {
+                    Id = -1
+                };
+        }
+
         public bool SaveSelectedFamiliarType()
         {
             var familiar = SelectedFamiliarType;
-            return false;
+
+            if (familiar == null)
+            {
+                return false;
+            }
+
+            if (familiar.Id < 0)
+            {
+                Context.FamiliarTypes.Add(familiar);
+            }
+
+            Context.SaveChanges();
+
+            return true;
         }
 
         #region INotifyPropertyChanged
