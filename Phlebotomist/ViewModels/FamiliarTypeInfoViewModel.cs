@@ -11,6 +11,13 @@ namespace Phlebotomist.ViewModels
 {
     public class FamiliarTypeInfoViewModel : INotifyPropertyChanged
     {
+        private Phlebotomist.Model.PhlebotomistModelContainer _context;
+        protected internal Phlebotomist.Model.PhlebotomistModelContainer Context
+        {
+            get;
+            set;
+        }
+
         private FamiliarType _selectedFamiliarType;
         public FamiliarType SelectedFamiliarType
         {

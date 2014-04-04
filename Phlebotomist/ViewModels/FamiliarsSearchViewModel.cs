@@ -11,6 +11,13 @@ namespace Phlebotomist.ViewModels
 {
     public class FamiliarsSearchViewModel : INotifyPropertyChanged
     {
+        private Phlebotomist.Model.PhlebotomistModelContainer _context;
+        protected internal Phlebotomist.Model.PhlebotomistModelContainer Context
+        {
+            get;
+            set;
+        }
+
         private ObservableCollection<FamiliarType> _familiars;
         public ObservableCollection<FamiliarType> Familiars
         {

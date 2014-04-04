@@ -22,9 +22,14 @@ namespace Phlebotomist.Views.Familiars
     /// </summary>
     public partial class FamiliarTypesView : UserControl
     {
+        public PhlebotomistModelContainer FamiliarTypeContext;
+
         public FamiliarTypesView()
         {
             InitializeComponent();
+            FamiliarTypeContext = new PhlebotomistModelContainer();
+            FamiliarTypesSearch.ViewModel.Context = FamiliarTypeContext;
+            FamiliarTypeInfo.ViewModel.Context = FamiliarTypeContext;
         }
 
         private void FamiliarTypesSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
