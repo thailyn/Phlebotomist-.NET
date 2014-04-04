@@ -106,6 +106,7 @@ namespace Phlebotomist.ViewModels
 
         public FamiliarTypeInfoViewModel()
         {
+
         }
 
         public void NewFamiliarTypeSelection(FamiliarType selectedFamiliarType)

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:pc="clr-namespace:Phlebotomist.Converters"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="415" d:DesignWidth="300">
     <UserControl.Resources>
         <pc:FamiliarTypeToStringConverter x:Key="familiarTypeToStringConverter" />
         <pc:RarityToStringConverter x:Key="rarityToStringConverter" />
@@ -27,6 +27,11 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+
+            <RowDefinition />
+
+            <RowDefinition Height="4*" />
+
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -76,8 +81,52 @@
         <TextBlock Grid.Row="11" Grid.Column="0">Next Evolution:</TextBlock>
         <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.NextEvolution.Name}"></TextBox>
 
+        <Grid Name="StatGrid" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1">HP</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2">ATK</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="3">DEF</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="4">WIS</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="5">AGI</TextBlock>
+
+            <TextBlock Grid.Row="1" Grid.Column="0">Base</TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.BaseHP}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding Path=SelectedFamiliarType.BaseATK}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Path=SelectedFamiliarType.BaseDEF}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="4" Text="{Binding Path=SelectedFamiliarType.BaseWIS}"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding Path=SelectedFamiliarType.BaseAGI}"></TextBox>
+
+            <TextBlock Grid.Row="2" Grid.Column="0">Max</TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.BaseHP}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=SelectedFamiliarType.BaseATK}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Path=SelectedFamiliarType.BaseDEF}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding Path=SelectedFamiliarType.BaseWIS}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="5" Text="{Binding Path=SelectedFamiliarType.BaseAGI}"></TextBox>
+
+            <TextBlock Grid.Row="3" Grid.Column="0">PE</TextBlock>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.BaseHP}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=SelectedFamiliarType.BaseATK}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Path=SelectedFamiliarType.BaseDEF}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding Path=SelectedFamiliarType.BaseWIS}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="5" Text="{Binding Path=SelectedFamiliarType.BaseAGI}"></TextBox>
+        </Grid>
+
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
-                    Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" >
+                    Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2" >
             <Button Name="newButton" Click="newButton_Click">New</Button>
             <Button Name="saveButton" Click="saveButton_Click">Save</Button>
             <Button Name="deleteButton" Click="deleteButton_Click" IsEnabled="False">Delete</Button>
