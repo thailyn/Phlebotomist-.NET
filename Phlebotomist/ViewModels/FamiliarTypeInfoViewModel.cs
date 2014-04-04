@@ -106,10 +106,6 @@ namespace Phlebotomist.ViewModels
 
         public FamiliarTypeInfoViewModel()
         {
-            var context = new Phlebotomist.Model.PhlebotomistModelContainer();
-            Rarities = new ObservableCollection<Rarity>(
-                from r in context.Rarities1
-                select r);
         }
 
         public void NewFamiliarTypeSelection(FamiliarType selectedFamiliarType)
