@@ -78,7 +78,7 @@
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
                     Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2" >
-            <Button Name="newButton" Click="newButton_Click" IsEnabled="False">New</Button>
+            <Button Name="newButton" Click="newButton_Click">New</Button>
             <Button Name="saveButton" Click="saveButton_Click">Save</Button>
             <Button Name="deleteButton" Click="deleteButton_Click" IsEnabled="False">Delete</Button>
         </StackPanel>

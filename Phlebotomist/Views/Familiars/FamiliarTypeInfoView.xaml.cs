@@ -59,7 +59,7 @@ namespace Phlebotomist.Views.Familiars
 
         private void newButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ViewModel.NewSelectedFamiliarType();
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
