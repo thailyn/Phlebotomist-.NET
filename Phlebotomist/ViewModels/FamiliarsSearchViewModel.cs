@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Phlebotomist.ViewModels
 {
@@ -14,20 +15,40 @@ namespace Phlebotomist.ViewModels
         private Phlebotomist.Model.PhlebotomistModelContainer _context;
         protected internal Phlebotomist.Model.PhlebotomistModelContainer Context
         {
+            get
+            {
+                return Repository.Context;
+            }
+        }
+
+        private Phlebotomist.Repositories.PhlebotomistRepository _repository;
+        protected internal Phlebotomist.Repositories.PhlebotomistRepository Repository
+        {
             get;
             set;
         }
 
-        private ObservableCollection<FamiliarType> _familiars;
-        public ObservableCollection<FamiliarType> Familiars
+        private ObservableCollection<FamiliarTypeViewModel> _familiars;
+        public ObservableCollection<FamiliarTypeViewModel> Familiars
         {
             get
             {
                 if (_familiars == null)
                 {
+                    /*
                     _familiars = new ObservableCollection<FamiliarType>(
                         from f in Context.FamiliarTypes
                         select f);
+                     * */
+
+                    var familiarsTemp = new ObservableCollection<FamiliarType>(
+                        Context.FamiliarTypes.Include(f => f.StatValues).OrderBy(f => f.Name));
+
+                    _familiars = new ObservableCollection<FamiliarTypeViewModel>();
+                    foreach (var familiar in familiarsTemp)
+                    {
+                        _familiars.Add(new FamiliarTypeViewModel(familiar, Repository));
+                    }
                 }
                 return _familiars;
             }

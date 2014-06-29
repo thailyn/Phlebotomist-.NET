@@ -10,7 +10,7 @@
         <CollectionViewSource
             Source="{Binding Path=Familiars}"
             x:Key="FamiliarsCollectionView" />
-        <pc:FamiliarTypeToStringConverter x:Key="familiarTypeToStringConverter" />
+        <pc:FamiliarTypeViewModelToStringConverter x:Key="familiarTypeViewModelToStringConverter" />
     </UserControl.Resources>
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">

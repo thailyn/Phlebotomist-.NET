@@ -1,4 +1,5 @@
 ﻿using Phlebotomist.Model;
+using Phlebotomist.Repositories;
 using Phlebotomist.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -23,13 +24,15 @@ namespace Phlebotomist.Views.Familiars
     public partial class FamiliarTypesView : UserControl
     {
         public PhlebotomistModelContainer FamiliarTypeContext;
+        public PhlebotomistRepository PhlebotomistRepository;
 
         public FamiliarTypesView()
         {
             InitializeComponent();
             FamiliarTypeContext = new PhlebotomistModelContainer();
-            FamiliarTypesSearch.ViewModel.Context = FamiliarTypeContext;
-            FamiliarTypeInfo.ViewModel.Context = FamiliarTypeContext;
+            PhlebotomistRepository = new Repositories.PhlebotomistRepository(FamiliarTypeContext);
+            FamiliarTypesSearch.ViewModel.Repository = PhlebotomistRepository;
+            FamiliarTypeInfo.ViewModel.Repository = PhlebotomistRepository;
         }
 
         private void FamiliarTypesSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -38,7 +41,7 @@ namespace Phlebotomist.Views.Familiars
             if (e.AddedItems.Count == 1)
             {
                 var familiarTypeInfoViewModel = FamiliarTypeInfo.DataContext as FamiliarTypeInfoViewModel;
-                familiarTypeInfoViewModel.NewFamiliarTypeSelection(e.AddedItems[0] as FamiliarType);
+                familiarTypeInfoViewModel.NewFamiliarTypeSelection(e.AddedItems[0] as FamiliarTypeViewModel);
             }
         }
     }

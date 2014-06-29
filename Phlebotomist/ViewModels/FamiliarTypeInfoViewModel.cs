@@ -14,12 +14,21 @@ namespace Phlebotomist.ViewModels
         private Phlebotomist.Model.PhlebotomistModelContainer _context;
         protected internal Phlebotomist.Model.PhlebotomistModelContainer Context
         {
+            get
+            {
+                return Repository.Context;
+            }
+        }
+
+        private Phlebotomist.Repositories.PhlebotomistRepository _repository;
+        protected internal Phlebotomist.Repositories.PhlebotomistRepository Repository
+        {
             get;
             set;
         }
 
-        private FamiliarType _selectedFamiliarType;
-        public FamiliarType SelectedFamiliarType
+        private FamiliarTypeViewModel _selectedFamiliarType;
+        public FamiliarTypeViewModel SelectedFamiliarType
         {
             get
             {
@@ -104,22 +113,64 @@ namespace Phlebotomist.ViewModels
             }
         }
 
+        private ObservableCollection<FamiliarTypeViewModel> _familiarTypes;
+        public ObservableCollection<FamiliarTypeViewModel> FamiliarTypes
+        {
+            get
+            {
+                if (_familiarTypes == null)
+                {
+                    /*
+                    _familiarTypes = new ObservableCollection<FamiliarTypeViewModel>(
+                        from f in Context.FamiliarTypes
+                        orderby f.Name
+                        select new FamiliarTypeViewModel(f, Repository));
+                     * */
+
+                    var familiarTypesTemp = new ObservableCollection<FamiliarType>(
+                        from f in Context.FamiliarTypes
+                        orderby f.Name
+                        select f);
+
+                    _familiarTypes = new ObservableCollection<FamiliarTypeViewModel>();
+                    foreach (var familiar in familiarTypesTemp)
+                    {
+                        _familiarTypes.Add(new FamiliarTypeViewModel(familiar, Repository));
+                    }
+                }
+                return _familiarTypes;
+            }
+            set
+            {
+                if (_familiarTypes != value)
+                {
+                    _familiarTypes = value;
+                    OnPropertyChanged("FamiliarTypes");
+                }
+            }
+        }
+
         public FamiliarTypeInfoViewModel()
         {
 
         }
 
-        public void NewFamiliarTypeSelection(FamiliarType selectedFamiliarType)
+        public void NewFamiliarTypeSelection(FamiliarTypeViewModel selectedFamiliarType)
         {
             SelectedFamiliarType = selectedFamiliarType;
         }
 
         public void NewSelectedFamiliarType()
         {
-            SelectedFamiliarType = new FamiliarType
+            SelectedFamiliarType = new FamiliarTypeViewModel(new FamiliarType
                 {
                     Id = -1
-                };
+                }, Repository);
+        }
+
+        public void ClearPreviousEvolution()
+        {
+            SelectedFamiliarType.PreviousEvolution = null;
         }
 
         public bool SaveSelectedFamiliarType()
@@ -131,12 +182,9 @@ namespace Phlebotomist.ViewModels
                 return false;
             }
 
-            if (familiar.Id < 0)
-            {
-                Context.FamiliarTypes.Add(familiar);
-            }
+            familiar.Save();
 
-            Context.SaveChanges();
+            //Context.SaveChanges();
 
             return true;
         }

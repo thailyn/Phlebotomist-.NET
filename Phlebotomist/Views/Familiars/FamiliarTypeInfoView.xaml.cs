@@ -52,6 +52,12 @@ namespace Phlebotomist.Views.Familiars
             throw new NotImplementedException();
         }
 
+        private void clearPreviousEvolutionButton_Click(Object sender, RoutedEventArgs e)
+        {
+            ViewModel.ClearPreviousEvolution();
+            PreviousEvolutionComboBox.SelectedItem = null;
+        }
+
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.SaveSelectedFamiliarType();
