@@ -173,6 +173,11 @@ namespace Phlebotomist.ViewModels
             SelectedFamiliarType.PreviousEvolution = null;
         }
 
+        public void ClearNextEvolution()
+        {
+            SelectedFamiliarType.NextEvolution = null;
+        }
+
         public bool SaveSelectedFamiliarType()
         {
             var familiar = SelectedFamiliarType;

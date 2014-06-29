@@ -58,6 +58,12 @@ namespace Phlebotomist.Views.Familiars
             PreviousEvolutionComboBox.SelectedItem = null;
         }
 
+        private void clearNextEvolutionButton_Click(Object sender, RoutedEventArgs e)
+        {
+            ViewModel.ClearNextEvolution();
+            NextEvolutionComboBox.SelectedItem = null;
+        }
+
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.SaveSelectedFamiliarType();
