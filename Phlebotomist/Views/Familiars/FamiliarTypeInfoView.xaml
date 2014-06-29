@@ -111,18 +111,18 @@
             <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding Path=SelectedFamiliarType.BaseAGI}"></TextBox>
 
             <TextBlock Grid.Row="2" Grid.Column="0">Max</TextBlock>
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.BaseHP}"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=SelectedFamiliarType.BaseATK}"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Path=SelectedFamiliarType.BaseDEF}"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding Path=SelectedFamiliarType.BaseWIS}"></TextBox>
-            <TextBox Grid.Row="2" Grid.Column="5" Text="{Binding Path=SelectedFamiliarType.BaseAGI}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.MaxHP}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding Path=SelectedFamiliarType.MaxATK}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Path=SelectedFamiliarType.MaxDEF}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding Path=SelectedFamiliarType.MaxWIS}"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="5" Text="{Binding Path=SelectedFamiliarType.MaxAGI}"></TextBox>
 
             <TextBlock Grid.Row="3" Grid.Column="0">PE</TextBlock>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.BaseHP}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=SelectedFamiliarType.BaseATK}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Path=SelectedFamiliarType.BaseDEF}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding Path=SelectedFamiliarType.BaseWIS}"></TextBox>
-            <TextBox Grid.Row="3" Grid.Column="5" Text="{Binding Path=SelectedFamiliarType.BaseAGI}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=SelectedFamiliarType.PEHP}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding Path=SelectedFamiliarType.PEATK}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="3" Text="{Binding Path=SelectedFamiliarType.PEDEF}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding Path=SelectedFamiliarType.PEWIS}"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="5" Text="{Binding Path=SelectedFamiliarType.PEAGI}"></TextBox>
         </Grid>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
