@@ -28,9 +28,3 @@ namespace Phlebotomist.Converters
         }
     }
 }
-
-
-namespace Phlebotomist.Converters
-{
-
-}
