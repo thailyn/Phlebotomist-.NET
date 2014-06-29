@@ -4,8 +4,13 @@
         xmlns:pv="clr-namespace:Phlebotomist.Views.Familiars"
         Title="MainWindow" Height="415" Width="525">
     <Grid>
-        <pv:FamiliarTypesView>
-            
-        </pv:FamiliarTypesView>
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    Familiar Types
+                </TabItem.Header>
+                <pv:FamiliarTypesView />
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
