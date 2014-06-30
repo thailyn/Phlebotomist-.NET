@@ -44,5 +44,35 @@ namespace Phlebotomist.Views.Skills
             this.ViewModel = new SkillInfoViewModel();
             this.DataContext = ViewModel;
         }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SaveSelectedSkill();
+        }
+
+        private void newButton_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.NewSelectedSkill();
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ignoresPosition_Checked(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SetIgnoresPosition(true);
+        }
+
+        private void ignoresPosition_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SetIgnoresPosition(false);
+        }
+
+        private void ignoresPosition_Indeterminate(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SetIgnoresPosition(null);
+        }
     }
 }

@@ -65,6 +65,7 @@
     <Compile Include="Converters\FamiliarTypeToStringConverter.cs" />
     <Compile Include="Converters\FamiliarTypeViewModelToStringConverter.cs" />
     <Compile Include="Converters\RarityToStringConverter.cs" />
+    <Compile Include="Converters\SkillTypeToStringConverter.cs" />
     <Compile Include="ViewModels\FamiliarsSearchViewModel.cs" />
     <Compile Include="ViewModels\FamiliarTypeInfoViewModel.cs" />
     <Compile Include="ViewModels\SkillInfoViewModel.cs" />

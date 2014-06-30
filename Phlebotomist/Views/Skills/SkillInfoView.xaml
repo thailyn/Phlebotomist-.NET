@@ -4,8 +4,102 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="415" d:DesignWidth="300">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0">Name:</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=SelectedSkill.Name}"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="0">Description:</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedSkill.Description}"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0">Type:</TextBlock>
+        <ComboBox Name="selectedType" Grid.Row="2" Grid.Column="1"
+                  ItemsSource="{Binding Path=Types}"
+                  SelectedValue="{Binding SelectedSkill.SkillTypeId, Mode=TwoWay}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name">
+        </ComboBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0">Pattern:</TextBlock>
+        <ComboBox Name="selectedPattern" Grid.Row="3" Grid.Column="1"
+                  ItemsSource="{Binding Path=Patterns}"
+                  SelectedValue="{Binding SelectedSkill.SkillPatternId, Mode=TwoWay}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name">
+        </ComboBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="0">Minimum Probability:</TextBlock>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=SelectedSkill.MinProbability}"></TextBox>
+        <TextBlock Grid.Row="5" Grid.Column="0">Maximum Probability:</TextBlock>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=SelectedSkill.MaxProbability}"></TextBox>
+
+        <TextBlock Grid.Row="6" Grid.Column="0">Modifier Value:</TextBlock>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=SelectedSkill.Modifier}"></TextBox>
+        <TextBlock Grid.Row="7" Grid.Column="0">Modifier Stat:</TextBlock>
+        <ComboBox Name="selectedModifierStat" Grid.Row="7" Grid.Column="1"
+                  ItemsSource="{Binding Path=Stats}"
+                  SelectedValue="{Binding SelectedSkill.ModifierStatId, Mode=TwoWay}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name">
+        </ComboBox>
+        <TextBlock Grid.Row="8" Grid.Column="0">Flat Modifier Value:</TextBlock>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=SelectedSkill.FlatModifier}"></TextBox>
+
+        <TextBlock Grid.Row="9" Grid.Column="0">Number of Targets:</TextBlock>
+        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=SelectedSkill.NumTargets}"></TextBox>
+        <TextBlock Grid.Row="10" Grid.Column="0">Row Range:</TextBlock>
+        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Path=SelectedSkill.RowRange}"></TextBox>
+        <TextBlock Grid.Row="11" Grid.Column="0">Column Range:</TextBlock>
+        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Path=SelectedSkill.ColumnRange}"></TextBox>
+
+        <TextBlock Grid.Row="12" Grid.Column="0">Skill Based:</TextBlock>
+        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Path=SelectedSkill.SkillBased}"></TextBox>
+        <TextBlock Grid.Row="13" Grid.Column="0">Damage Reduction:</TextBlock>
+        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Path=SelectedSkill.DamageReduction}"></TextBox>
+
+        <TextBlock Grid.Row="14" Grid.Column="0">Opponent Defensive Modifier Stat:</TextBlock>
+        <ComboBox Name="selectedOpponentModifierStat" Grid.Row="14" Grid.Column="1"
+                  ItemsSource="{Binding Path=Stats}"
+                  SelectedValue="{Binding SelectedSkill.FoeDefensiveModifierStatId, Mode=TwoWay}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name">
+        </ComboBox>
+
+        <TextBlock Grid.Row="15" Grid.Column="0">Ignores Position:</TextBlock>
+        <CheckBox Name="selectedIgnoresPosition" Grid.Row="15" Grid.Column="1"
+                  IsThreeState="True"
+                  Checked="ignoresPosition_Checked"
+                  Unchecked="ignoresPosition_Unchecked"
+                  Indeterminate="ignoresPosition_Indeterminate"/>
+
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
+                    Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" >
+            <Button Name="newButton" Click="newButton_Click">New</Button>
+            <Button Name="saveButton" Click="saveButton_Click">Save</Button>
+            <Button Name="deleteButton" Click="deleteButton_Click" IsEnabled="False">Delete</Button>
+        </StackPanel>
     </Grid>
 </UserControl>
