@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Phlebotomist.Views.Skills.SkillsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ps="clr-namespace:Phlebotomist.Views.Skills"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ps:SkillsSearchView x:Name="SkillsSearch" Grid.Column="0" ListView.SelectionChanged="SkillsSearch_SelectionChanged" />
+        <ps:SkillInfoView x:Name="SkillInfo" Grid.Column="1" />
+    </Grid>
+</UserControl>

@@ -67,6 +67,8 @@
     <Compile Include="Converters\RarityToStringConverter.cs" />
     <Compile Include="ViewModels\FamiliarsSearchViewModel.cs" />
     <Compile Include="ViewModels\FamiliarTypeInfoViewModel.cs" />
+    <Compile Include="ViewModels\SkillInfoViewModel.cs" />
+    <Compile Include="ViewModels\SkillsSearchViewModel.cs" />
     <Compile Include="Views\Familiars\FamiliarTypeInfoView.xaml.cs">
       <DependentUpon>FamiliarTypeInfoView.xaml</DependentUpon>
     </Compile>
@@ -75,6 +77,15 @@
     </Compile>
     <Compile Include="Views\Familiars\FamiliarTypesView.xaml.cs">
       <DependentUpon>FamiliarTypesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Skills\SkillInfoView.xaml.cs">
+      <DependentUpon>SkillInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Skills\SkillsSearchView.xaml.cs">
+      <DependentUpon>SkillsSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Skills\SkillsView.xaml.cs">
+      <DependentUpon>SkillsView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -97,6 +108,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Familiars\FamiliarTypesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Skills\SkillInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Skills\SkillsSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Skills\SkillsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
