@@ -150,6 +150,31 @@ namespace Phlebotomist.ViewModels
             }
         }
 
+        private ObservableCollection<Skill> _skills;
+        public ObservableCollection<Skill> Skills
+        {
+            get
+            {
+                if (_skills == null)
+                {
+                    _skills = new ObservableCollection<Skill>(
+                        from s in Context.Skills
+                        orderby s.Name
+                        select s);
+                }
+
+                return _skills;
+            }
+            set
+            {
+                if (_skills != value)
+                {
+                    _skills = value;
+                    OnPropertyChanged("Skills");
+                }
+            }
+        }
+
         public FamiliarTypeInfoViewModel()
         {
 
@@ -192,6 +217,18 @@ namespace Phlebotomist.ViewModels
             //Context.SaveChanges();
 
             return true;
+        }
+
+        public void AddSkill(Skill newSkill)
+        {
+            SelectedFamiliarType.AddSkill(newSkill);
+            OnPropertyChanged("SelectedFamiliarType");
+        }
+
+        public void RemoveSkill(Skill skill)
+        {
+            SelectedFamiliarType.RemoveSkill(skill);
+            OnPropertyChanged("SelectedFamiliarType");
         }
 
         #region INotifyPropertyChanged

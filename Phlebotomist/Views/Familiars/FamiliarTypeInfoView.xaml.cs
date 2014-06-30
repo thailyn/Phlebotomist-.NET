@@ -79,6 +79,26 @@ namespace Phlebotomist.Views.Familiars
 
         }
 
+        private void addSkillButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedSkill = SkillsSourceListBox.SelectedItem as Skill;
+            if (selectedSkill == null)
+            {
+                return;
+            }
 
+            ViewModel.AddSkill(selectedSkill);
+        }
+
+        private void removeSkillButton_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedSkill = SkillsDestinationListBox.SelectedItem as FamiliarTypeSkill;
+            if (selectedSkill == null)
+            {
+                return;
+            }
+
+            ViewModel.RemoveSkill(selectedSkill.Skill);
+        }
     }
 }

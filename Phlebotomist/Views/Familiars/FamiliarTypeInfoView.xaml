@@ -29,6 +29,8 @@
             <RowDefinition />
             <RowDefinition />
 
+            <RowDefinition Height="Auto"/> <!-- Skills -->
+
             <RowDefinition />
 
             <RowDefinition Height="4*" />
@@ -112,7 +114,35 @@
             </Button>
         </Grid>
 
-        <Grid Name="StatGrid" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2">
+        <Grid Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0">Skills:</TextBlock>
+            <ListBox Grid.Row="0" Grid.Column="1" Grid.RowSpan="4" Name="SkillsSourceListBox"
+                     ItemsSource="{Binding Path=Skills}"
+                     DisplayMemberPath="Name" />
+            
+            <Button Grid.Row="1" Grid.Column="2" Click="addSkillButton_Click">-&gt;</Button>
+            <Button Grid.Row="2" Grid.Column="2" Click="removeSkillButton_Click">&lt;-</Button>
+
+            <ListBox Grid.Row="0" Grid.Column="3" Grid.RowSpan="4" Name="SkillsDestinationListBox"
+                     ItemsSource="{Binding Path=SelectedFamiliarType.Skills}"
+                     DisplayMemberPath="Skill.Name"/>
+        </Grid>
+
+        <Grid Name="StatGrid" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
@@ -157,7 +187,7 @@
         </Grid>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
-                    Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="2" >
+                    Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" >
             <Button Name="newButton" Click="newButton_Click">New</Button>
             <Button Name="saveButton" Click="saveButton_Click">Save</Button>
             <Button Name="deleteButton" Click="deleteButton_Click" IsEnabled="False">Delete</Button>
