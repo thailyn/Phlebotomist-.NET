@@ -66,10 +66,21 @@
     <Compile Include="Converters\FamiliarTypeViewModelToStringConverter.cs" />
     <Compile Include="Converters\RarityToStringConverter.cs" />
     <Compile Include="Converters\SkillTypeToStringConverter.cs" />
+    <Compile Include="ViewModels\BrigadeInfoViewModel.cs" />
+    <Compile Include="ViewModels\BrigadesSearchViewModel.cs" />
     <Compile Include="ViewModels\FamiliarsSearchViewModel.cs" />
     <Compile Include="ViewModels\FamiliarTypeInfoViewModel.cs" />
     <Compile Include="ViewModels\SkillInfoViewModel.cs" />
     <Compile Include="ViewModels\SkillsSearchViewModel.cs" />
+    <Compile Include="Views\Brigades\BrigadeInfoView.xaml.cs">
+      <DependentUpon>BrigadeInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Brigades\BrigadesSearchView.xaml.cs">
+      <DependentUpon>BrigadesSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Brigades\BrigadesView.xaml.cs">
+      <DependentUpon>BrigadesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Familiars\FamiliarTypeInfoView.xaml.cs">
       <DependentUpon>FamiliarTypeInfoView.xaml</DependentUpon>
     </Compile>
@@ -100,6 +111,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Brigades\BrigadeInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Brigades\BrigadesSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Brigades\BrigadesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Familiars\FamiliarTypeInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
