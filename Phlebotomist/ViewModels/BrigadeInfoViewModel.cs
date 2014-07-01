@@ -36,7 +36,24 @@ namespace Phlebotomist.ViewModels
                 if (_selectedBrigade != value)
                 {
                     _selectedBrigade = value;
-                    OnPropertyChanged("SelectedSkill");
+                    OnPropertyChanged("SelectedBrigade");
+                }
+            }
+        }
+
+        private FamiliarTypeViewModel _selectedFamiliarType;
+        public FamiliarTypeViewModel SelectedFamiliarType
+        {
+            get
+            {
+                return _selectedFamiliarType;
+            }
+            set
+            {
+                if (_selectedFamiliarType != value)
+                {
+                    _selectedFamiliarType = value;
+                    OnPropertyChanged("SelectedFamiliarType");
                 }
             }
         }
@@ -44,6 +61,11 @@ namespace Phlebotomist.ViewModels
         public BrigadeInfoViewModel()
         {
 
+        }
+
+        public void NewFamiliarTypeSelection(FamiliarTypeViewModel selectedFamiliarType)
+        {
+            SelectedFamiliarType = selectedFamiliarType;
         }
 
         public void NewBrigadeSelection(BrigadeViewModel selectedBrigade)

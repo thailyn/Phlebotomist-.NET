@@ -1,6 +1,7 @@
 ﻿using Phlebotomist.Model;
 using Phlebotomist.Repositories;
 using Phlebotomist.ViewModels;
+using Phlebotomist.Views.Familiars;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace Phlebotomist.Views.Brigades
             PhlebotomistRepository = new Repositories.PhlebotomistRepository(BrigadeContext);
             BrigadesSearch.ViewModel.Repository = PhlebotomistRepository;
             BrigadeInfo.ViewModel.Repository = PhlebotomistRepository;
+            FamiliarTypesSearch.ViewModel.Repository = PhlebotomistRepository;
         }
 
         private void BrigadesSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -42,6 +44,16 @@ namespace Phlebotomist.Views.Brigades
             {
                 var brigadeInfoViewModel = BrigadeInfo.DataContext as BrigadeInfoViewModel;
                 brigadeInfoViewModel.NewBrigadeSelection(e.AddedItems[0] as BrigadeViewModel);
+            }
+        }
+
+        public void BrigadesSearch_FamiliarTypeSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FamiliarTypesSearchView searchView = (FamiliarTypesSearchView)sender;
+            if (e.AddedItems.Count == 1)
+            {
+                var brigadeInfoViewModel = BrigadeInfo.DataContext as BrigadeInfoViewModel;
+                brigadeInfoViewModel.NewFamiliarTypeSelection(e.AddedItems[0] as FamiliarTypeViewModel);
             }
         }
     }
