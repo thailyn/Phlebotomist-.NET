@@ -27,30 +27,30 @@ namespace Phlebotomist.ViewModels
             set;
         }
 
-        private ObservableCollection<FamiliarTypeViewModel> _familiarTypes;
-        public ObservableCollection<FamiliarTypeViewModel> FamiliarTypes
+        private ObservableCollection<BrigadeViewModel> _brigades;
+        public ObservableCollection<BrigadeViewModel> Brigades
         {
             get
             {
-                if (_familiarTypes == null)
+                if (_brigades == null)
                 {
-                    var familiarTypesTemp = new ObservableCollection<FamiliarType>(
-                        Context.FamiliarTypes.OrderBy(s => s.Name));
+                    var brigadesTemp = new ObservableCollection<Brigade>(
+                        Context.Brigades.OrderBy(s => s.Name));
 
-                    _familiarTypes = new ObservableCollection<FamiliarTypeViewModel>();
-                    foreach (var familiarType in familiarTypesTemp)
+                    _brigades = new ObservableCollection<BrigadeViewModel>();
+                    foreach (var brigade in brigadesTemp)
                     {
-                        _familiarTypes.Add(new FamiliarTypeViewModel(familiarType, Repository));
+                        _brigades.Add(new BrigadeViewModel(brigade, Repository));
                     }
                 }
-                return _familiarTypes;
+                return _brigades;
             }
             protected set
             {
-                if (_familiarTypes != value)
+                if (_brigades != value)
                 {
-                    _familiarTypes = value;
-                    OnPropertyChanged("Skills");
+                    _brigades = value;
+                    OnPropertyChanged("Brigades");
                 }
             }
         }
