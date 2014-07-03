@@ -15,7 +15,8 @@
         </Grid.ColumnDefinitions>
 
         <pb:BrigadesSearchView x:Name="BrigadesSearch" Grid.Column="0" ListView.SelectionChanged="BrigadesSearch_SelectionChanged" />
-        <pf:FamiliarTypesSearchView x:Name="FamiliarTypesSearch" Grid.Column="1" ListView.SelectionChanged="BrigadesSearch_FamiliarTypeSelectionChanged" />
+        <pf:FamiliarTypesSearchView x:Name="FamiliarTypesSearch" Grid.Column="1" ListView.SelectionChanged="BrigadesSearch_FamiliarTypeSelectionChanged"
+                                    ListView.MouseDoubleClick="BrigadeSearch_FamiliarTypeDoubleClick"/>
         <pb:BrigadeInfoView x:Name="BrigadeInfo" Grid.Column="2" />
     </Grid>
 </UserControl>

@@ -56,5 +56,11 @@ namespace Phlebotomist.Views.Brigades
                 brigadeInfoViewModel.NewFamiliarTypeSelection(e.AddedItems[0] as FamiliarTypeViewModel);
             }
         }
+
+        public void BrigadeSearch_FamiliarTypeDoubleClick(object sender, RoutedEventArgs e)
+        {
+            var brigadeInfoViewModel = BrigadeInfo.DataContext as BrigadeInfoViewModel;
+            brigadeInfoViewModel.AddSelectedFamiliarTypeToBrigade();
+        }
     }
 }

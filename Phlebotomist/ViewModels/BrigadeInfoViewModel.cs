@@ -73,6 +73,12 @@ namespace Phlebotomist.ViewModels
             SelectedBrigade = selectedBrigade;
         }
 
+        public void AddSelectedFamiliarTypeToBrigade()
+        {
+            var selectedFamiliarType = SelectedFamiliarType;
+            // do magic
+        }
+
         public void NewSelectedBrigade()
         {
             SelectedBrigade = new BrigadeViewModel(new Brigade
