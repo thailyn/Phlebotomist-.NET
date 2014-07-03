@@ -7,16 +7,93 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0">Name:</TextBlock>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=SelectedBrigade.Name}"></TextBox>
+        <TextBlock Grid.Row="1" Grid.Column="0">Notes:</TextBlock>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedBrigade.Notes}"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0">Formation:</TextBlock>
+        <ComboBox Name="selectedType" Grid.Row="2" Grid.Column="1"
+                  ItemsSource="{Binding Path=Formations}"
+                  SelectedValue="{Binding SelectedBrigade.BrigadeFormationId, Mode=TwoWay}"
+                  SelectedValuePath="Id"
+                  DisplayMemberPath="Name">
+        </ComboBox>
         
+        <Grid Grid.Row="4" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+
+                <ColumnDefinition />
+                <ColumnDefinition Width="15"/>
+
+                <ColumnDefinition />
+                <ColumnDefinition Width="15"/>
+
+                <ColumnDefinition />
+                <ColumnDefinition Width="15"/>
+
+                <ColumnDefinition />
+                <ColumnDefinition Width="15"/>
+
+                <ColumnDefinition />
+                <ColumnDefinition Width="15"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2">Far Left</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2">Mid Left</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2">Middle</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="2">Mid Right</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="2">Far Right</TextBlock>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" >Front Line</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" >Reserve</TextBlock>
+
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedBrigade.FarLeftFrontFamiliarType.Name}"
+                     GotFocus="FarLeftFrontTextBox_GotFocus" />
+            <!-- LostFocus="FarLeftFrontTextBox_LostFocus" -->
+            <Button Grid.Row="1" Grid.Column="2" Content="Clear" />
+            <TextBox Grid.Row="1" Grid.Column="3" >2</TextBox>
+            <Button Grid.Row="1" Grid.Column="4" Content="Clear" />
+            <TextBox Grid.Row="1" Grid.Column="5" >3</TextBox>
+            <Button Grid.Row="1" Grid.Column="6" Content="Clear" />
+            <TextBox Grid.Row="1" Grid.Column="7" >4</TextBox>
+            <Button Grid.Row="1" Grid.Column="8" Content="Clear" />
+            <TextBox Grid.Row="1" Grid.Column="9" >5</TextBox>
+            <Button Grid.Row="1" Grid.Column="10" Content="Clear" />
+
+            <TextBox Grid.Row="2" Grid.Column="1" >R1</TextBox>
+            <Button Grid.Row="2" Grid.Column="2" Content="Clear" />
+            <TextBox Grid.Row="2" Grid.Column="3" >R2</TextBox>
+            <Button Grid.Row="2" Grid.Column="4" Content="Clear" />
+            <TextBox Grid.Row="2" Grid.Column="5" >R3</TextBox>
+            <Button Grid.Row="2" Grid.Column="6" Content="Clear" />
+            <TextBox Grid.Row="2" Grid.Column="7" >R4</TextBox>
+            <Button Grid.Row="2" Grid.Column="8" Content="Clear" />
+            <TextBox Grid.Row="2" Grid.Column="9" >R5</TextBox>
+            <Button Grid.Row="2" Grid.Column="10" Content="Clear" />
+        </Grid>
+
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
                     Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" >
             <Button Name="newButton" Click="newButton_Click">New</Button>

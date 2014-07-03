@@ -1,6 +1,7 @@
 ﻿using Phlebotomist.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,63 @@ namespace Phlebotomist.ViewModels
             }
         }
 
+        private ObservableCollection<BrigadeFormation> _formations;
+        public ObservableCollection<BrigadeFormation> Formations
+        {
+            get
+            {
+                if (_formations == null)
+                {
+                    _formations = new ObservableCollection<BrigadeFormation>(
+                        from f in Context.BrigadeFormations
+                        select f);
+                }
+                return _formations;
+            }
+            set
+            {
+                if (_formations != value)
+                {
+                    _formations = value;
+                    OnPropertyChanged("Formations");
+                }
+            }
+        }
+
+        private BrigadeHorizontalPosition _selectedBrigadeHorizontalPosition;
+        public BrigadeHorizontalPosition SelectedBrigadeHorizontalPosition
+        {
+            get
+            {
+                return _selectedBrigadeHorizontalPosition;
+            }
+            set
+            {
+                if (_selectedBrigadeHorizontalPosition != value)
+                {
+                    _selectedBrigadeHorizontalPosition = value;
+                    OnPropertyChanged("SelectedBrigadeHorizontalPosition");
+                }
+            }
+        }
+
+        private bool _selectedBrigadePositionIsReserve;
+        public bool SelectedBrigadePositionIsReserve
+        {
+            get
+            {
+                return _selectedBrigadePositionIsReserve;
+            }
+            set
+            {
+                if (_selectedBrigadePositionIsReserve != value)
+                {
+                    _selectedBrigadePositionIsReserve = value;
+                    OnPropertyChanged("SelectedBrigadePositionIsReserve");
+                }
+            }
+        }
+
         public BrigadeInfoViewModel()
         {
 
@@ -75,8 +133,39 @@ namespace Phlebotomist.ViewModels
 
         public void AddSelectedFamiliarTypeToBrigade()
         {
-            var selectedFamiliarType = SelectedFamiliarType;
-            // do magic
+            switch (SelectedBrigadeHorizontalPosition)
+            {
+                case BrigadeHorizontalPosition.FarLeft:
+                    if (SelectedBrigadePositionIsReserve)
+                    {
+                        //SelectedBrigade.FarLeftReserveFamiliarType = SelectedFamiliarType;
+                    }
+                    else
+                    {
+                        //SelectedBrigade.FarLeftFrontFamiliarType = SelectedFamiliarType;
+                        SelectedBrigade.SetBrigadePositionFamiliarType(SelectedBrigadeHorizontalPosition,
+                            SelectedBrigadePositionIsReserve, SelectedFamiliarType);
+                    }
+                    break;
+                case BrigadeHorizontalPosition.MidLeft:
+                    throw new NotImplementedException();
+                    break;
+                case BrigadeHorizontalPosition.Middle:
+                    throw new NotImplementedException();
+                    break;
+                case BrigadeHorizontalPosition.MidRight:
+                    throw new NotImplementedException();
+                    break;
+                case BrigadeHorizontalPosition.FarRight:
+                    throw new NotImplementedException();
+                    break;
+            }
+        }
+
+        public void SelectBrigadePosition(BrigadeHorizontalPosition horizontalPosition, bool isReserve)
+        {
+            SelectedBrigadeHorizontalPosition = horizontalPosition;
+            SelectedBrigadePositionIsReserve = isReserve;
         }
 
         public void NewSelectedBrigade()

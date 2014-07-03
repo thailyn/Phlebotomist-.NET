@@ -59,5 +59,12 @@ namespace Phlebotomist.Views.Brigades
         {
 
         }
+
+        #region Got/Lost Focus Event Handlers
+        private void FarLeftFrontTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.FarLeft, false);
+        }
+        #endregion
     }
 }
