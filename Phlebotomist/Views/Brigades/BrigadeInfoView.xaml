@@ -32,8 +32,7 @@
         <TextBlock Grid.Row="2" Grid.Column="0">Formation:</TextBlock>
         <ComboBox Name="selectedType" Grid.Row="2" Grid.Column="1"
                   ItemsSource="{Binding Path=Formations}"
-                  SelectedValue="{Binding SelectedBrigade.BrigadeFormationId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedBrigade.Formation, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
         
