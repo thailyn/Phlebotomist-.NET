@@ -7,23 +7,26 @@
              d:DesignHeight="415" d:DesignWidth="300">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+            <RowDefinition Height="22" />
+
+            <RowDefinition Height="*" />
+
+            <RowDefinition Height="22" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -96,7 +99,7 @@
                   Indeterminate="ignoresPosition_Indeterminate"/>
 
         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
-                    Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="2" >
+                    Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="2" >
             <Button Name="newButton" Click="newButton_Click">New</Button>
             <Button Name="saveButton" Click="saveButton_Click">Save</Button>
             <Button Name="deleteButton" Click="deleteButton_Click" IsEnabled="False">Delete</Button>

@@ -6,7 +6,7 @@
              xmlns:pc="clr-namespace:Phlebotomist.Converters"
              xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="415" d:DesignWidth="300">
+             d:DesignHeight="460" d:DesignWidth="300">
     <UserControl.Resources>
         <pc:FamiliarTypeToStringConverter x:Key="familiarTypeToStringConverter" />
         <pc:RarityToStringConverter x:Key="rarityToStringConverter" />
@@ -16,26 +16,26 @@
         <TextBlock Text="{Binding Path=SelectedFamiliarType,
             Converter={StaticResource familiarTypeToStringConverter}}" /> -->
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="22"/>
 
-            <RowDefinition Height="Auto"/> <!-- Skills -->
+            <RowDefinition Height="*"/> <!-- Skills -->
 
-            <RowDefinition />
+            <RowDefinition Height="4"/>
 
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="88"/> <!-- Stats -->
 
-            <RowDefinition />
+            <RowDefinition Height="22"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -117,15 +117,15 @@
         <Grid Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="22" />
+                <RowDefinition Height="22" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
                 <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="30"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
