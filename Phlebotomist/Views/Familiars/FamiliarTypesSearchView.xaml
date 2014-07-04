@@ -14,18 +14,14 @@
     </UserControl.Resources>
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <ListBox ItemsSource="{Binding Source={StaticResource FamiliarsCollectionView}}">
-                <!-- ,Converter={StaticResource familiarTypeToStringConverter} -->
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Path=Name}" />
-                            <!--<TextBlock Text="{Binding Path=Description}"/>
-                            <TextBlock Text="{Binding Path=Priority}"/>-->
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            <DataGrid ItemsSource="{Binding Source={StaticResource FamiliarsCollectionView}}"
+                      AutoGenerateColumns="False" AlternatingRowBackground="LightGray">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="PvP Score" Binding="{Binding PEOrMaxPvPScore}" />
+                    <DataGridTextColumn Header="Raid Score" Binding="{Binding PEOrMaxRaidScore}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </ScrollViewer>
     </Grid>
 </UserControl>
