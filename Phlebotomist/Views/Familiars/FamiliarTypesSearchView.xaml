@@ -18,8 +18,8 @@
                       AutoGenerateColumns="False" AlternatingRowBackground="LightGray">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                    <DataGridTextColumn Header="PvP Score" Binding="{Binding PEOrMaxPvPScore}" />
-                    <DataGridTextColumn Header="Raid Score" Binding="{Binding PEOrMaxRaidScore}" />
+                    <DataGridTextColumn Header="PvP Score" Binding="{Binding PEOrMaxPvPScore, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Raid Score" Binding="{Binding PEOrMaxRaidScore, Mode=OneWay}" />
                 </DataGrid.Columns>
             </DataGrid>
         </ScrollViewer>
