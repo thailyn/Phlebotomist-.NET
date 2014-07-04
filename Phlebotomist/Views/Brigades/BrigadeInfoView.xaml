@@ -43,7 +43,7 @@
                 <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="55"/>
 
                 <ColumnDefinition />
                 <ColumnDefinition Width="15"/>
@@ -68,7 +68,7 @@
             <TextBlock Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="2">Far Right</TextBlock>
 
             <TextBlock Grid.Row="1" Grid.Column="0" >Front Line</TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="0" >Reserve</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Height="25" VerticalAlignment="Bottom" >Reserve</TextBlock>
 
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedBrigade.FarLeftFrontFamiliarType.Name}"
                      GotFocus="FarLeftFrontTextBox_GotFocus" />
@@ -111,7 +111,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition Width="55"/>
                 <ColumnDefinition />
                 <ColumnDefinition />
                 <ColumnDefinition />
