@@ -13,15 +13,17 @@
     </UserControl.Resources>
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <ListBox ItemsSource="{Binding Source={StaticResource SkillsCollectionView}}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Path=Name}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            <DataGrid ItemsSource="{Binding Source={StaticResource SkillsCollectionView}}"
+                      AutoGenerateColumns="False" AlternatingRowBackground="LightGray">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="Type" Binding="{Binding Type.Name}" />
+                    <DataGridTextColumn Header="Group" Binding="{Binding Group.Name}" />
+                    <DataGridTextColumn Header="Pattern" Binding="{Binding Pattern.Name}" />
+                    <DataGridTextColumn Header="Modifier Stat" Binding="{Binding ModifierStat.Name}" />
+                    <DataGridTextColumn Header="Modifier Value" Binding="{Binding Modifier}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </ScrollViewer>
     </Grid>
 </UserControl>
