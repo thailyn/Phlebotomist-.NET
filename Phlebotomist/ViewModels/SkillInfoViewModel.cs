@@ -67,6 +67,29 @@ namespace Phlebotomist.ViewModels
             }
         }
 
+        private ObservableCollection<SkillGroup> _groups;
+        public ObservableCollection<SkillGroup> Groups
+        {
+            get
+            {
+                if (_groups == null)
+                {
+                    _groups = new ObservableCollection<SkillGroup>(
+                        from s in Context.SkillGroups
+                        select s);
+                }
+                return _groups;
+            }
+            set
+            {
+                if (_groups != value)
+                {
+                    _groups = value;
+                    OnPropertyChanged("Groups");
+                }
+            }
+        }
+
         private ObservableCollection<SkillPattern> _patterns;
         public ObservableCollection<SkillPattern> Patterns
         {
