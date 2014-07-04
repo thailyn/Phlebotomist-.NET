@@ -133,33 +133,9 @@ namespace Phlebotomist.ViewModels
 
         public void AddSelectedFamiliarTypeToBrigade()
         {
-            switch (SelectedBrigadeHorizontalPosition)
-            {
-                case BrigadeHorizontalPosition.FarLeft:
-                    if (SelectedBrigadePositionIsReserve)
-                    {
-                        //SelectedBrigade.FarLeftReserveFamiliarType = SelectedFamiliarType;
-                    }
-                    else
-                    {
-                        //SelectedBrigade.FarLeftFrontFamiliarType = SelectedFamiliarType;
-                        SelectedBrigade.SetBrigadePositionFamiliarType(SelectedBrigadeHorizontalPosition,
-                            SelectedBrigadePositionIsReserve, SelectedFamiliarType);
-                    }
-                    break;
-                case BrigadeHorizontalPosition.MidLeft:
-                    throw new NotImplementedException();
-                    break;
-                case BrigadeHorizontalPosition.Middle:
-                    throw new NotImplementedException();
-                    break;
-                case BrigadeHorizontalPosition.MidRight:
-                    throw new NotImplementedException();
-                    break;
-                case BrigadeHorizontalPosition.FarRight:
-                    throw new NotImplementedException();
-                    break;
-            }
+            SelectedBrigade.SetBrigadePositionFamiliarType(SelectedBrigadeHorizontalPosition,
+                SelectedBrigadePositionIsReserve, SelectedFamiliarType);
+            OnPropertyChanged("SelectedBrigade");
         }
 
         public void SelectBrigadePosition(BrigadeHorizontalPosition horizontalPosition, bool isReserve)

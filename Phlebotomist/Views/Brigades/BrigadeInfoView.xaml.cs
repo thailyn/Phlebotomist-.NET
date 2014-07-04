@@ -65,6 +65,51 @@ namespace Phlebotomist.Views.Brigades
         {
             ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.FarLeft, false);
         }
+
+        private void MidLeftFrontTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.MidLeft, false);
+        }
+
+        private void MiddleFrontTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.Middle, false);
+        }
+
+        private void MidRightFrontTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.MidRight, false);
+        }
+
+        private void FarRightFrontTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.FarRight, false);
+        }
+
+        private void FarLeftReserveTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.FarLeft, true);
+        }
+
+        private void MidLeftReserveTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.MidLeft, true);
+        }
+
+        private void MiddleReserveTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.Middle, true);
+        }
+
+        private void MidRightReserveTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.MidRight, true);
+        }
+
+        private void FarRightReserveTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectBrigadePosition(BrigadeHorizontalPosition.FarRight, true);
+        }
         #endregion
     }
 }

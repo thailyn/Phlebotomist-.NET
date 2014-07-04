@@ -71,26 +71,34 @@
 
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=SelectedBrigade.FarLeftFrontFamiliarType.Name}"
                      GotFocus="FarLeftFrontTextBox_GotFocus" />
-            <!-- LostFocus="FarLeftFrontTextBox_LostFocus" -->
             <Button Grid.Row="1" Grid.Column="2" Content="Clear" />
-            <TextBox Grid.Row="1" Grid.Column="3" >2</TextBox>
+            <TextBox Grid.Row="1" Grid.Column="3" Text="{Binding Path=SelectedBrigade.MidLeftFrontFamiliarType.Name}"
+                     GotFocus="MidLeftFrontTextBox_GotFocus" />
             <Button Grid.Row="1" Grid.Column="4" Content="Clear" />
-            <TextBox Grid.Row="1" Grid.Column="5" >3</TextBox>
+            <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding Path=SelectedBrigade.MiddleFrontFamiliarType.Name}"
+                     GotFocus="MiddleFrontTextBox_GotFocus" />
             <Button Grid.Row="1" Grid.Column="6" Content="Clear" />
-            <TextBox Grid.Row="1" Grid.Column="7" >4</TextBox>
+            <TextBox Grid.Row="1" Grid.Column="7" Text="{Binding Path=SelectedBrigade.MidRightFrontFamiliarType.Name}"
+                     GotFocus="MidRightFrontTextBox_GotFocus" />
             <Button Grid.Row="1" Grid.Column="8" Content="Clear" />
-            <TextBox Grid.Row="1" Grid.Column="9" >5</TextBox>
+            <TextBox Grid.Row="1" Grid.Column="9" Text="{Binding Path=SelectedBrigade.FarRightFrontFamiliarType.Name}"
+                     GotFocus="FarRightFrontTextBox_GotFocus" />
             <Button Grid.Row="1" Grid.Column="10" Content="Clear" />
 
-            <TextBox Grid.Row="2" Grid.Column="1" >R1</TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=SelectedBrigade.FarLeftReserveFamiliarType.Name}"
+                     GotFocus="FarLeftReserveTextBox_GotFocus" />
             <Button Grid.Row="2" Grid.Column="2" Content="Clear" />
-            <TextBox Grid.Row="2" Grid.Column="3" >R2</TextBox>
+            <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Path=SelectedBrigade.MidLeftReserveFamiliarType.Name}"
+                     GotFocus="MidLeftReserveTextBox_GotFocus" />
             <Button Grid.Row="2" Grid.Column="4" Content="Clear" />
-            <TextBox Grid.Row="2" Grid.Column="5" >R3</TextBox>
+            <TextBox Grid.Row="2" Grid.Column="5" Text="{Binding Path=SelectedBrigade.MiddleReserveFamiliarType.Name}"
+                     GotFocus="MiddleReserveTextBox_GotFocus" />
             <Button Grid.Row="2" Grid.Column="6" Content="Clear" />
-            <TextBox Grid.Row="2" Grid.Column="7" >R4</TextBox>
+            <TextBox Grid.Row="2" Grid.Column="7" Text="{Binding Path=SelectedBrigade.MidRightReserveFamiliarType.Name}"
+                     GotFocus="MidRightReserveTextBox_GotFocus" />
             <Button Grid.Row="2" Grid.Column="8" Content="Clear" />
-            <TextBox Grid.Row="2" Grid.Column="9" >R5</TextBox>
+            <TextBox Grid.Row="2" Grid.Column="9" Text="{Binding Path=SelectedBrigade.FarRightReserveFamiliarType.Name}"
+                     GotFocus="FarRightReserveTextBox_GotFocus" />
             <Button Grid.Row="2" Grid.Column="10" Content="Clear" />
         </Grid>
 
