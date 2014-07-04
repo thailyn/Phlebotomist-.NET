@@ -4,7 +4,7 @@
         xmlns:pv="clr-namespace:Phlebotomist.Views.Familiars"
         xmlns:ps="clr-namespace:Phlebotomist.Views.Skills"
         xmlns:pb="clr-namespace:Phlebotomist.Views.Brigades"
-        Title="MainWindow" Height="640" Width="680">
+        Title="Phlebotomist" Height="640" Width="680">
     <Grid>
         <TabControl>
             <TabItem>

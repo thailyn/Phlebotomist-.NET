@@ -20,9 +20,14 @@ namespace Phlebotomist
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const string APPLICATION_TITLE = "Phlebotomist";
+        private const string VERSION_NUMBER = "0.01";
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Title = string.Format("{0} (v. {1})", APPLICATION_TITLE, VERSION_NUMBER);
         }
     }
 }
