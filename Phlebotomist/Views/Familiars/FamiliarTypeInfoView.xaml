@@ -51,8 +51,7 @@
         <TextBlock Grid.Row="2" Grid.Column="0">Rarity:</TextBlock>
         <ComboBox Name="selectedRarity" Grid.Row="2" Grid.Column="1"
                   ItemsSource="{Binding Path=Rarities}"
-                  SelectedValue="{Binding SelectedFamiliarType.RarityId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedFamiliarType.Rarity, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
         <TextBlock Grid.Row="3" Grid.Column="0">Stars:</TextBlock>
@@ -63,8 +62,7 @@
         <TextBlock Grid.Row="5" Grid.Column="0">Growth:</TextBlock>
         <ComboBox Grid.Row="5" Grid.Column="1"
                   ItemsSource="{Binding Path=Growths}"
-                  SelectedValue="{Binding SelectedFamiliarType.GrowthId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedFamiliarType.Growth, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
         <TextBlock Grid.Row="6" Grid.Column="0">Worth:</TextBlock>
@@ -72,8 +70,7 @@
         <TextBlock Grid.Row="7" Grid.Column="0">Race:</TextBlock>
         <ComboBox Grid.Row="7" Grid.Column="1"
                   ItemsSource="{Binding Path=Races}"
-                  SelectedValue="{Binding SelectedFamiliarType.RaceId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedFamiliarType.Race, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
 
@@ -91,8 +88,7 @@
             <ComboBox Name="PreviousEvolutionComboBox" Grid.Row="0" Grid.Column="0"
                   ItemsSource="{Binding Path=FamiliarTypes}"
                   DisplayMemberPath="Name"
-                  SelectedValue="{Binding SelectedFamiliarType.PrevEvolutionId, Mode=TwoWay}"
-                  SelectedValuePath="Id">
+                  SelectedValue="{Binding SelectedFamiliarType.PreviousEvolution, Mode=TwoWay}">
             </ComboBox>
             <Button Grid.Row="0" Grid.Column="1" Name="ClearPreviousEvolutionButton" Click="clearPreviousEvolutionButton_Click">
                 Clear
@@ -108,8 +104,7 @@
             <ComboBox Name="NextEvolutionComboBox" Grid.Row="0" Grid.Column="0"
                   ItemsSource="{Binding Path=FamiliarTypes}"
                   DisplayMemberPath="Name"
-                  SelectedValue="{Binding SelectedFamiliarType.NextEvolutionId, Mode=TwoWay}"
-                  SelectedValuePath="Id">
+                  SelectedValue="{Binding SelectedFamiliarType.NextEvolution, Mode=TwoWay}">
             </ComboBox>
             <Button Grid.Row="0" Grid.Column="1" Name="ClearNextEvolutionButton" Click="clearNextEvolutionButton_Click">
                 Clear
