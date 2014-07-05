@@ -38,6 +38,21 @@ namespace Phlebotomist.Views.Skills
             }
         }
 
+        public static readonly RoutedEvent SkillsUpdatedEvent = EventManager.RegisterRoutedEvent(
+            "SkillsUpdated", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(SkillInfoView));
+
+        public event RoutedEventHandler SkillsUpdated
+        {
+            add { AddHandler(SkillsUpdatedEvent, value); }
+            remove { RemoveHandler(SkillsUpdatedEvent, value); }
+        }
+
+        private void RaiseSkillsUpdatedevent()
+        {
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(SkillsUpdatedEvent);
+            RaiseEvent(newEventArgs);
+        }
+
         public SkillInfoView()
         {
             InitializeComponent();
@@ -47,7 +62,11 @@ namespace Phlebotomist.Views.Skills
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.SaveSelectedSkill();
+            bool result = ViewModel.SaveSelectedSkill();
+            if (result)
+            {
+                RaiseSkillsUpdatedevent();
+            }
         }
 
         private void newButton_Click(object sender, RoutedEventArgs e)

@@ -44,5 +44,11 @@ namespace Phlebotomist.Views.Skills
                 skillInfoViewModel.NewSkillSelection(e.AddedItems[0] as SkillViewModel);
             }
         }
+
+        private void SkillsInfoView_SkillsUpdated(object sender, RoutedEventArgs e)
+        {
+            var skillsSearchViewModel = SkillsSearch.ViewModel;
+            skillsSearchViewModel.SkillsUpdated();
+        }
     }
 }

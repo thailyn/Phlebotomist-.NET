@@ -13,6 +13,6 @@
         </Grid.ColumnDefinitions>
 
         <ps:SkillsSearchView x:Name="SkillsSearch" Grid.Column="0" ListView.SelectionChanged="SkillsSearch_SelectionChanged" />
-        <ps:SkillInfoView x:Name="SkillInfo" Grid.Column="1" />
+        <ps:SkillInfoView x:Name="SkillInfo" Grid.Column="1" SkillsUpdated="SkillsInfoView_SkillsUpdated" />
     </Grid>
 </UserControl>
