@@ -21,7 +21,7 @@ namespace Phlebotomist
     public partial class MainWindow : Window
     {
         private const string APPLICATION_TITLE = "Phlebotomist";
-        private const string VERSION_NUMBER = "0.01";
+        private const string VERSION_NUMBER = "0.02";
 
         public MainWindow()
         {
