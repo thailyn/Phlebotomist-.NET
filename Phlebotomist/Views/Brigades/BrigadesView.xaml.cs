@@ -27,6 +27,23 @@ namespace Phlebotomist.Views.Brigades
         public PhlebotomistModelContainer BrigadeContext;
         public PhlebotomistRepository PhlebotomistRepository;
 
+        private BrigadesViewModel _viewModel;
+        public BrigadesViewModel ViewModel
+        {
+            get
+            {
+                return _viewModel;
+            }
+            set
+            {
+                if (_viewModel != value)
+                {
+                    _viewModel = value;
+                    //OnPropertyChanged("ViewModel");
+                }
+            }
+        }
+
         public BrigadesView()
         {
             InitializeComponent();
@@ -35,6 +52,10 @@ namespace Phlebotomist.Views.Brigades
             BrigadesSearch.ViewModel.Repository = PhlebotomistRepository;
             BrigadeInfo.ViewModel.Repository = PhlebotomistRepository;
             FamiliarTypesSearch.ViewModel.Repository = PhlebotomistRepository;
+
+            this.ViewModel = new BrigadesViewModel(BrigadesSearch.ViewModel, FamiliarTypesSearch.ViewModel,
+                BrigadeInfo.ViewModel);
+            this.DataContext = ViewModel;
         }
 
         private void BrigadesSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -47,7 +47,7 @@ namespace Phlebotomist.Views.Skills
             remove { RemoveHandler(SkillsUpdatedEvent, value); }
         }
 
-        private void RaiseSkillsUpdatedevent()
+        private void RaiseSkillsUpdatedEvent()
         {
             RoutedEventArgs newEventArgs = new RoutedEventArgs(SkillsUpdatedEvent);
             RaiseEvent(newEventArgs);
@@ -65,7 +65,7 @@ namespace Phlebotomist.Views.Skills
             bool result = ViewModel.SaveSelectedSkill();
             if (result)
             {
-                RaiseSkillsUpdatedevent();
+                RaiseSkillsUpdatedEvent();
             }
         }
 

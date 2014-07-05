@@ -40,6 +40,21 @@ namespace Phlebotomist.Views.Familiars
             }
         }
 
+        public static readonly RoutedEvent FamiliarTypesUpdatedEvent = EventManager.RegisterRoutedEvent(
+            "FamiliarTypesUpdated", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(FamiliarTypeInfoView));
+
+        public event RoutedEventHandler FamiliarTypesUpdated
+        {
+            add { AddHandler(FamiliarTypesUpdatedEvent, value); }
+            remove { RemoveHandler(FamiliarTypesUpdatedEvent, value); }
+        }
+
+        private void RaiseFamiliarTypesUpdatedEvent()
+        {
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(FamiliarTypesUpdatedEvent);
+            RaiseEvent(newEventArgs);
+        }
+
         public FamiliarTypeInfoView()
         {
             InitializeComponent();
@@ -66,7 +81,11 @@ namespace Phlebotomist.Views.Familiars
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.SaveSelectedFamiliarType();
+            bool result = ViewModel.SaveSelectedFamiliarType();
+            if (result)
+            {
+                RaiseFamiliarTypesUpdatedEvent();
+            }
         }
 
         private void newButton_Click(object sender, RoutedEventArgs e)

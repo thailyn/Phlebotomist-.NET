@@ -62,6 +62,22 @@ namespace Phlebotomist.ViewModels
             }
         }
 
+        public FamiliarsSearchViewModel()
+        {
+
+        }
+
+        public void FamiliarTypesUpdated()
+        {
+            // Blow away the Familiars collection, so it is reloaded
+            // from the database the next time it is needed.
+            // This is an expensive operation, though, so if we could
+            // only do it when a skill is added or deleted, it would
+            // be better.
+            Familiars = null;
+        }
+
+        #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
@@ -72,10 +88,6 @@ namespace Phlebotomist.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
-        public FamiliarsSearchViewModel()
-        {
-
-        }
+        #endregion
     }
 }

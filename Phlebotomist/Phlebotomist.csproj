@@ -68,8 +68,10 @@
     <Compile Include="Converters\SkillTypeToStringConverter.cs" />
     <Compile Include="ViewModels\BrigadeInfoViewModel.cs" />
     <Compile Include="ViewModels\BrigadesSearchViewModel.cs" />
+    <Compile Include="ViewModels\BrigadesViewModel.cs" />
     <Compile Include="ViewModels\FamiliarsSearchViewModel.cs" />
     <Compile Include="ViewModels\FamiliarTypeInfoViewModel.cs" />
+    <Compile Include="ViewModels\FamiliarTypesViewModel.cs" />
     <Compile Include="ViewModels\SkillInfoViewModel.cs" />
     <Compile Include="ViewModels\SkillsSearchViewModel.cs" />
     <Compile Include="Views\Brigades\BrigadeInfoView.xaml.cs">

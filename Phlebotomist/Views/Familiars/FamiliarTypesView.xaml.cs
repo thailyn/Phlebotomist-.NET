@@ -26,6 +26,23 @@ namespace Phlebotomist.Views.Familiars
         public PhlebotomistModelContainer FamiliarTypeContext;
         public PhlebotomistRepository PhlebotomistRepository;
 
+        private FamiliarTypesViewModel _viewModel;
+        public FamiliarTypesViewModel ViewModel
+        {
+            get
+            {
+                return _viewModel;
+            }
+            set
+            {
+                if (_viewModel != value)
+                {
+                    _viewModel = value;
+                    //OnPropertyChanged("ViewModel");
+                }
+            }
+        }
+
         public FamiliarTypesView()
         {
             InitializeComponent();
@@ -33,6 +50,9 @@ namespace Phlebotomist.Views.Familiars
             PhlebotomistRepository = new Repositories.PhlebotomistRepository(FamiliarTypeContext);
             FamiliarTypesSearch.ViewModel.Repository = PhlebotomistRepository;
             FamiliarTypeInfo.ViewModel.Repository = PhlebotomistRepository;
+
+            this.ViewModel = new FamiliarTypesViewModel(FamiliarTypesSearch.ViewModel, FamiliarTypeInfo.ViewModel);
+            this.DataContext = ViewModel;
         }
 
         private void FamiliarTypesSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)

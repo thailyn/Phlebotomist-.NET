@@ -11,15 +11,15 @@
                 <TabItem.Header>
                     Familiar Types
                 </TabItem.Header>
-                <pv:FamiliarTypesView />
+                <pv:FamiliarTypesView x:Name="FamiliarTypesView" pv:FamiliarTypeInfoView.FamiliarTypesUpdated="FamiliarTypesInfoView_FamiliarTypesUpdated"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>Skills</TabItem.Header>
-                <ps:SkillsView />
+                <ps:SkillsView x:Name="SkillsView" />
             </TabItem>
             <TabItem>
                 <TabItem.Header>Brigades</TabItem.Header>
-                <pb:BrigadesView />
+                <pb:BrigadesView x:Name="BrigadesView" />
             </TabItem>
         </TabControl>
     </Grid>

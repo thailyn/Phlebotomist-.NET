@@ -29,5 +29,14 @@ namespace Phlebotomist
 
             Title = string.Format("{0} (v. {1})", APPLICATION_TITLE, VERSION_NUMBER);
         }
+
+        private void FamiliarTypesInfoView_FamiliarTypesUpdated(object sender, RoutedEventArgs e)
+        {
+            var familiarTypesViewModel = FamiliarTypesView.ViewModel;
+            familiarTypesViewModel.FamiliarTypesUpdated();
+
+            var brigadesViewModel = BrigadesView.ViewModel;
+            brigadesViewModel.FamiliarTypesUpdated();
+        }
     }
 }
