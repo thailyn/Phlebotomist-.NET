@@ -42,24 +42,21 @@
         <TextBlock Grid.Row="2" Grid.Column="0">Type:</TextBlock>
         <ComboBox Name="selectedType" Grid.Row="2" Grid.Column="1"
                   ItemsSource="{Binding Path=Types}"
-                  SelectedValue="{Binding SelectedSkill.SkillTypeId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedSkill.Type, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
 
         <TextBlock Grid.Row="3" Grid.Column="0">Group:</TextBlock>
         <ComboBox Name="selectedGroup" Grid.Row="3" Grid.Column="1"
                   ItemsSource="{Binding Path=Groups}"
-                  SelectedValue="{Binding SelectedSkill.SkillGroupId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedSkill.Group, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
 
         <TextBlock Grid.Row="4" Grid.Column="0">Pattern:</TextBlock>
         <ComboBox Name="selectedPattern" Grid.Row="4" Grid.Column="1"
                   ItemsSource="{Binding Path=Patterns}"
-                  SelectedValue="{Binding SelectedSkill.SkillPatternId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedSkill.Pattern, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
 
@@ -73,8 +70,7 @@
         <TextBlock Grid.Row="8" Grid.Column="0">Modifier Stat:</TextBlock>
         <ComboBox Name="selectedModifierStat" Grid.Row="8" Grid.Column="1"
                   ItemsSource="{Binding Path=Stats}"
-                  SelectedValue="{Binding SelectedSkill.ModifierStatId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedSkill.ModifierStat, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
         <TextBlock Grid.Row="9" Grid.Column="0">Flat Modifier Value:</TextBlock>
@@ -95,8 +91,7 @@
         <TextBlock Grid.Row="15" Grid.Column="0">Opponent Defensive Modifier Stat:</TextBlock>
         <ComboBox Name="selectedOpponentModifierStat" Grid.Row="15" Grid.Column="1"
                   ItemsSource="{Binding Path=Stats}"
-                  SelectedValue="{Binding SelectedSkill.FoeDefensiveModifierStatId, Mode=TwoWay}"
-                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedSkill.FoeDefensiveModifierStat, Mode=TwoWay}"
                   DisplayMemberPath="Name">
         </ComboBox>
 
