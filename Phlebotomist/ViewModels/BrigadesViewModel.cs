@@ -24,5 +24,10 @@ namespace Phlebotomist.ViewModels
         {
             FamiliarTypesSearchViewModel.FamiliarTypesUpdated();
         }
+
+        public void BrigadesUpdated()
+        {
+            SearchViewModel.BrigadesUpdated();
+        }
     }
 }

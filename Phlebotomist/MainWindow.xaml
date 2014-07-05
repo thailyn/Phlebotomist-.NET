@@ -19,7 +19,7 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>Brigades</TabItem.Header>
-                <pb:BrigadesView x:Name="BrigadesView" />
+                <pb:BrigadesView x:Name="BrigadesView" pb:BrigadeInfoView.BrigadesUpdated="BrigadesInfoView_BrigadesUpdated" />
             </TabItem>
         </TabControl>
     </Grid>

@@ -38,6 +38,21 @@ namespace Phlebotomist.Views.Brigades
             }
         }
 
+        public static readonly RoutedEvent BrigadesUpdatedEvent = EventManager.RegisterRoutedEvent(
+            "BrigadesUpdated", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(BrigadeInfoView));
+
+        public event RoutedEventHandler BrigadesUpdated
+        {
+            add { AddHandler(BrigadesUpdatedEvent, value); }
+            remove { RemoveHandler(BrigadesUpdatedEvent, value); }
+        }
+
+        private void RaiseBrigadesUpdatedEvent()
+        {
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(BrigadesUpdatedEvent);
+            RaiseEvent(newEventArgs);
+        }
+
         public BrigadeInfoView()
         {
             InitializeComponent();
@@ -47,7 +62,11 @@ namespace Phlebotomist.Views.Brigades
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.SaveSelectedBrigade();
+            bool result = ViewModel.SaveSelectedBrigade();
+            if (result)
+            {
+                RaiseBrigadesUpdatedEvent();
+            }
         }
 
         private void newButton_Click(object sender, RoutedEventArgs e)

@@ -48,5 +48,11 @@ namespace Phlebotomist
             var skillsViewModel = SkillsView.ViewModel;
             skillsViewModel.SkillsUpdated();
         }
+
+        private void BrigadesInfoView_BrigadesUpdated(object sender, RoutedEventArgs e)
+        {
+            var brigadesViewModel = BrigadesView.ViewModel;
+            brigadesViewModel.BrigadesUpdated();
+        }
     }
 }
