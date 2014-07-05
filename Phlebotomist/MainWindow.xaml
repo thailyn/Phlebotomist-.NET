@@ -15,7 +15,7 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>Skills</TabItem.Header>
-                <ps:SkillsView x:Name="SkillsView" />
+                <ps:SkillsView x:Name="SkillsView" ps:SkillInfoView.SkillsUpdated="SkillsInfoView_SkillsUpdated" />
             </TabItem>
             <TabItem>
                 <TabItem.Header>Brigades</TabItem.Header>

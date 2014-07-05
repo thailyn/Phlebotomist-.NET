@@ -190,6 +190,16 @@ namespace Phlebotomist.ViewModels
             FamiliarTypes = null;
         }
 
+        public void SkillsUpdated()
+        {
+            // Blow away the Familiars collection, so it is reloaded
+            // from the database the next time it is needed.
+            // This is an expensive operation, though, so if we could
+            // only do it when a skill is added or deleted, it would
+            // be better.
+            Skills = null;
+        }
+
         public void NewFamiliarTypeSelection(FamiliarTypeViewModel selectedFamiliarType)
         {
             SelectedFamiliarType = selectedFamiliarType;

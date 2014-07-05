@@ -74,6 +74,7 @@
     <Compile Include="ViewModels\FamiliarTypesViewModel.cs" />
     <Compile Include="ViewModels\SkillInfoViewModel.cs" />
     <Compile Include="ViewModels\SkillsSearchViewModel.cs" />
+    <Compile Include="ViewModels\SkillsViewModel.cs" />
     <Compile Include="Views\Brigades\BrigadeInfoView.xaml.cs">
       <DependentUpon>BrigadeInfoView.xaml</DependentUpon>
     </Compile>

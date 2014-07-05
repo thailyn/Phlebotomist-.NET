@@ -24,5 +24,9 @@ namespace Phlebotomist.ViewModels
             InfoViewModel.FamiliarTypesUpdated();
         }
 
+        public void SkillsUpdated()
+        {
+            InfoViewModel.SkillsUpdated();
+        }
     }
 }

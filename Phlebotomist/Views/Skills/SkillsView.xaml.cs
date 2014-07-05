@@ -26,6 +26,23 @@ namespace Phlebotomist.Views.Skills
         public PhlebotomistModelContainer SkillContext;
         public PhlebotomistRepository PhlebotomistRepository;
 
+        private SkillsViewModel _viewModel;
+        public SkillsViewModel ViewModel
+        {
+            get
+            {
+                return _viewModel;
+            }
+            set
+            {
+                if (_viewModel != value)
+                {
+                    _viewModel = value;
+                    //OnPropertyChanged("ViewModel");
+                }
+            }
+        }
+
         public SkillsView()
         {
             InitializeComponent();
@@ -33,6 +50,9 @@ namespace Phlebotomist.Views.Skills
             PhlebotomistRepository = new Repositories.PhlebotomistRepository(SkillContext);
             SkillsSearch.ViewModel.Repository = PhlebotomistRepository;
             SkillInfo.ViewModel.Repository = PhlebotomistRepository;
+
+            this.ViewModel = new SkillsViewModel(SkillsSearch.ViewModel, SkillInfo.ViewModel);
+            this.DataContext = ViewModel;
         }
 
         private void SkillsSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -43,12 +63,6 @@ namespace Phlebotomist.Views.Skills
                 var skillInfoViewModel = SkillInfo.DataContext as SkillInfoViewModel;
                 skillInfoViewModel.NewSkillSelection(e.AddedItems[0] as SkillViewModel);
             }
-        }
-
-        private void SkillsInfoView_SkillsUpdated(object sender, RoutedEventArgs e)
-        {
-            var skillsSearchViewModel = SkillsSearch.ViewModel;
-            skillsSearchViewModel.SkillsUpdated();
         }
     }
 }
